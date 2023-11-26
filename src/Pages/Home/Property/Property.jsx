@@ -6,6 +6,7 @@ import 'react-tabs/style/react-tabs.css';
 import { useState } from "react";
 import useProperties from "../../../hook/useProperties";
 import PropertyCard from "./PropertyCard";
+import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 
 
 
@@ -19,58 +20,74 @@ const Property = () => {
     return (
         <div>
             <Helmet>
-                <title>JCX Industries | Properties</title>               
+                <title>JCX Industries | Properties</title>
             </Helmet>
             <Cover img={imgC} title={'Our Properties'}></Cover>
+            <SectionTitle subHeading={'Get some '}
+                heading={'All Apartment Types'}
+            ></SectionTitle>
             <Tabs className={'text-center mt-10 mb-10'} defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                <TabList>
-                    <Tab>HOUSES</Tab>
-                    <Tab>OFFICE</Tab>
-                    <Tab>VILLA</Tab>
-                    <Tab>BUNGALOW</Tab>
-                    
+                <TabList className={'flex gap-5 justify-center mb-10'}>
+                    <Tab className={'text-xl font-semibold hover:text-orange-500 hover:underline cursor-pointer'}>HOUSES</Tab>
+                    <Tab className={'text-xl font-semibold hover:text-orange-500 hover:underline cursor-pointer'}>OFFICE</Tab>
+                    <Tab className={'text-xl font-semibold hover:text-orange-500 hover:underline cursor-pointer'}>VILLA</Tab>
+                    <Tab className={'text-xl font-semibold hover:text-orange-500 hover:underline cursor-pointer'}>BUNGALOW</Tab>
+
                 </TabList>
                 <TabPanel>
+                    <div>
+                        <h2 className="text-2xl font-semibold border-b-4 mb-5 italic text-lime-600 w-2/12">Houses Types</h2>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+                        {
+                            houses.map(item => <PropertyCard
+                                key={item._id}
+                                item={item}
+                            ></PropertyCard>)
+                        }
+                    </div>
+                    </div>
+
+                </TabPanel>
+                <TabPanel>
+                    <div>
+                    <h2 className="text-2xl font-semibold border-b-4 mb-5 italic text-purple-500 w-2/12">Office Types</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
                         {
-                            houses.map(item =><PropertyCard
+                            office.map(item => <PropertyCard
                                 key={item._id}
                                 item={item}
                             ></PropertyCard>)
                         }
+                    </div>
                     </div>
                 </TabPanel>
                 <TabPanel>
+                    <div>
+                    <h2 className="text-2xl font-semibold border-b-4 mb-5 italic text-emerald-600 w-2/12">Villa Types</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-                    {
-                            office.map(item =><PropertyCard
+                        {
+                            villa.map(item => <PropertyCard
                                 key={item._id}
                                 item={item}
                             ></PropertyCard>)
                         }
+                    </div>
                     </div>
                 </TabPanel>
                 <TabPanel>
+                    <div>
+                    <h2 className="text-2xl font-semibold border-b-4 mb-5 italic text-violet-700 w-2/12">Bungalow Types</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-                    {
-                            villa.map(item =><PropertyCard
+                        {
+                            bungalow.map(item => <PropertyCard
                                 key={item._id}
                                 item={item}
                             ></PropertyCard>)
                         }
                     </div>
-                </TabPanel>
-                <TabPanel>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-                    {
-                            bungalow.map(item =><PropertyCard
-                                key={item._id}
-                                item={item}
-                            ></PropertyCard>)
-                        }
                     </div>
                 </TabPanel>
-                
+
             </Tabs>
         </div>
     );
