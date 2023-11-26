@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.carousel .thumbs{
+  text-align: center;
+  }
+
+  .ban{
+    text-align: center;
+    padding: 90px;
+    background-image: url('./assets/5.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    
+    margin-bottom: 40px;
+}
