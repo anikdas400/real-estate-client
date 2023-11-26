@@ -1,11 +1,10 @@
 
 
-const HouseTypes = ({ item }) => {
-    const { name, recipe, image, category, price } = item
+const PropertyCard = ({item}) => {
+    const {name,recipe,image,price,_id,category}=item
     return (
         <div>
-
-            <div className="card card-compact  bg-base-100 shadow-xl">
+             <div className="card card-compact  bg-base-100 shadow-xl">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
@@ -23,4 +22,4 @@ const HouseTypes = ({ item }) => {
     );
 };
 
-export default HouseTypes;
+export default PropertyCard;
