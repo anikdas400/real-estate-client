@@ -7,7 +7,7 @@ const ExploreTypes = () => {
 
     const [house,setHouse]=useState([])
     useEffect(() => {
-        fetch('house.json')
+        fetch('properties.json')
         .then(res => res.json())
         .then(data=>{
             const house = data.filter(item=>item.category === 'houses') 
