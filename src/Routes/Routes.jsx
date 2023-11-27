@@ -8,6 +8,7 @@ import Property from "../Pages/Home/Property/Property";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
   export const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ import SignUp from "../Pages/SignUp/SignUp";
         },
         {
           path:"property",
-          element:<Property></Property>
+          element:<PrivateRoute><Property></Property></PrivateRoute>
         },
         {
           path:"login",

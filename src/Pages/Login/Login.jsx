@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
     const { signIn } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || "/";
     const handleLogin = event => {
         event.preventDefault()
         const form = event.target;
@@ -17,6 +21,24 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
+                Swal.fire({
+                    title: "User login successfully",
+                    showClass: {
+                      popup: `
+                        animate__animated
+                        animate__fadeInUp
+                        animate__faster
+                      `
+                    },
+                    hideClass: {
+                      popup: `
+                        animate__animated
+                        animate__fadeOutDown
+                        animate__faster
+                      `
+                    }
+                  });
+                  navigate(from, { replace: true });
             })
     }
     return (
