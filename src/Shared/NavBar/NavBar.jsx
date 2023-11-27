@@ -18,7 +18,7 @@ const NavBar = () => {
                 </div>
                 <div className="text-center">
                 <img className="w-44" src="https://i.ibb.co/55F6yKW/images.png" alt="" />
-                <h2 className="text-xl font-semibold italic text-lime-500">JCX Industries</h2>
+                <h2 className="text-xl font-semibold italic text-cyan-700">JCX Industries</h2>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
