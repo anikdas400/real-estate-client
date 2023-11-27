@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 
 
 const useProperties = () => {
-    const [house,setHouse]=useState([])
+    const [properties,setProperties]=useState([])
     const [loading,setLoading] = useState(true)
     useEffect(() => {
-        fetch('properties.json')
+        fetch('http://localhost:5000/properties')
         .then(res => res.json())
         .then(data=>{             
-            setHouse(data)
+            setProperties(data)
             setLoading(false)
         })
     },[])
-    return [house,loading]
+    return [properties,loading]
 };
 
 export default useProperties;

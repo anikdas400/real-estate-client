@@ -5,11 +5,14 @@ import {
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Property from "../Pages/Home/Property/Property";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import Login from "../Pages/Login/Login";
 
   export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:"/",
@@ -18,6 +21,10 @@ import Property from "../Pages/Home/Property/Property";
         {
           path:"property",
           element:<Property></Property>
+        },
+        {
+          path:"login",
+          element:<Login></Login>
         }
       ]
     },

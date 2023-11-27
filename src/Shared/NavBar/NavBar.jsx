@@ -5,7 +5,7 @@ const NavBar = () => {
     const navOption = <>
         <li><Link to='/' className="text-xl">Home</Link></li>
         <li><Link to='property' className="text-xl">All Properties</Link></li>
-        <li><a>Dashboard</a></li>
+        <li><Link to='/dashbord'>Dashboard</Link></li>
     </>
     return (
         <div className="navbar fixed bg-opacity-40 max-w-screen-xl z-20 bg-base-100">
@@ -27,7 +27,8 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                <Link to='login' className="btn btn-primary text-lg btn-outline">Login</Link>
+                
             </div>
         </div>
     );
