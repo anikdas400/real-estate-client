@@ -13,28 +13,33 @@ const PropertyCard = ({ item }) => {
     const location = useLocation()
     const axiosSecure = useAxiosSecure()
     const [, refetch] = useCart()
-    const handleAddToWishlist = () => {
+    const handleAddToWishlist = food => {
         if (user && user.email) {
+            console.log(food, user.email)
             // console.log(home)
             const cartItem = {
                 homeId: _id,
-                email: user.enail,
+                email: user.email,
                 name,
                 image,
                 price
             }
-            axiosSecure.post('/wishs', cartItem)
+            console.log(user.email)
+            axiosSecure.post('/carts', cartItem)
                 .then(res => {
                     console.log(res.data)
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: `${name} Added to Your Wishlist`,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                    // refetch the chart
-                    refetch()
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: `${name} Added to Your Wishlist`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        // refetch the chart
+                        refetch()
+                    }
+                    
                 })
         }
         else {
@@ -78,7 +83,7 @@ const PropertyCard = ({ item }) => {
 
 
                     </div>
-                    <button onClick={handleAddToWishlist} className="btn btn-success text-lg border-0 border-b-4">Add to Wishlist</button>
+                    <button onClick={() => handleAddToWishlist()} className="btn btn-success text-lg border-0 border-b-4">Add to Wishlist</button>
 
                 </div>
             </div>

@@ -1,13 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hook/useAxiosPublic";
+import SocialLogin from "../../Components/SocialLogin";
 
 
 const SignUp = () => {
+    const axiosPublic = useAxiosPublic()
     const { register, handleSubmit, reset, formState: { errors }, } = useForm()
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const navigate = useNavigate()
@@ -20,24 +23,33 @@ const SignUp = () => {
                 console.log(data.name)
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('user profile info update')
-                        reset()
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "User created successfully",
-                            showConfirmButton: false,
-                            timer: 1500
-                          });
-                          navigate('/')
-                        // const userInfo = {
-                        //     neme: data.name,
-                        //     email: data.email,
-                        //     // photo: data.photoURL
+                      
+                        // console.log('user profile info update')
+                        const userInfo = {
+                            neme: data.name,
+                            email: data.email
+                            // photo: data.photoURL
 
-                        // }
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user add to the data base')
+                                    reset()
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: "User created successfully",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/')
+                                }
+                            })
+
+
                     })
-                    .catch(error=>console.log(error))
+                    .catch(error => console.log(error))
             })
     }
     return (
@@ -113,7 +125,8 @@ const SignUp = () => {
                         <p className="text-center mb-3">Already have an account?please <Link className="text-purple-700 font-bold text-lg" to="/login">Login</Link> </p>
                         <div className="divider divider-accent w-8/12 mx-auto text-purple-700 italic font-bold">OR</div>
 
-                        <p className="text-center mb-5">sign in with<button className="btn btn-ghost font-bold text-purple-900 text-lg"><FcGoogle className="text-lg" />Google</button></p>
+                        {/* <p className="text-center mb-5">sign in with<button className="btn btn-ghost font-bold text-purple-900 text-lg"><FcGoogle className="text-lg" />Google</button></p> */}
+                        <SocialLogin></SocialLogin>
 
                     </div>
                 </div>

@@ -4,13 +4,16 @@ import {
   } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
-import Property from "../Pages/Home/Property/Property";
+
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
-import PrivateRoute from "./PrivateRoute";
+
 import Dashboard from "../Layout/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
+import PrivateRoute from "./PrivateRoute";
+import Property from "../Pages/Home/Property/Property";
+
 
 
   export const router = createBrowserRouter([

@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Components/SocialLogin";
 
 
 const Login = () => {
@@ -82,7 +83,8 @@ const Login = () => {
                         <p className="text-center mb-3">Do not have an account?please <Link className="text-purple-700 font-bold text-lg" to="/signup">Sign Up</Link> </p>
                         <div className="divider divider-accent w-8/12 mx-auto text-purple-700 italic font-bold">OR</div>
 
-                        <p className="text-center mb-5">sign in with<button className="btn btn-ghost font-bold text-purple-900 text-lg"><FcGoogle className="text-lg" />Google</button></p>
+                        {/* <p className="text-center mb-5">sign in with<button className="btn btn-ghost font-bold text-purple-900 text-lg"><FcGoogle className="text-lg" />Google</button></p> */}
+                        <SocialLogin></SocialLogin>
 
 
 

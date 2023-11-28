@@ -22,7 +22,7 @@ const Cart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axiosSecure.delete(`/wishs/${id}`)
+                axiosSecure.delete(`/carts/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             refatch()
