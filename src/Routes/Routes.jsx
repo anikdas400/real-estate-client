@@ -14,6 +14,8 @@ import Cart from "../Pages/Dashboard/Cart/Cart";
 import PrivateRoute from "./PrivateRoute";
 import Property from "../Pages/Home/Property/Property";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddProperty from "../Pages/Dashboard/AddProperty/AddProperty";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -42,18 +44,24 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
         
       ]
     },
+
     {
       path:"dashboard",
       element:<Dashboard></Dashboard>,
       children:[
+        // normal user
         {
           path:"cart",
           element:<Cart></Cart>
         },
-        // agent route
+        // admin route
         {
           path:"users",
-          element:<AllUsers></AllUsers>
+          element:<AdminRoute><AllUsers></AllUsers></AdminRoute> 
+        },
+        {
+          path:"addProperty",
+          element:<AdminRoute><AddProperty></AddProperty></AdminRoute> 
         }
       ]
     }
