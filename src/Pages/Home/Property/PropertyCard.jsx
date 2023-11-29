@@ -7,7 +7,7 @@ import useCart from "../../../hook/useCart";
 
 
 const PropertyCard = ({ item }) => {
-    const { name, recipe, image, price, _id, category } = item
+    const { name, recipe, image, price, _id, category,} = item
     const { user } = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
@@ -22,7 +22,8 @@ const PropertyCard = ({ item }) => {
                 email: user.email,
                 name,
                 image,
-                price
+                price,
+                
             }
             console.log(user.email)
             axiosSecure.post('/carts', cartItem)
