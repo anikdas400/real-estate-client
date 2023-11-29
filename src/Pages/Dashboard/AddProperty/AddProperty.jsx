@@ -1,9 +1,10 @@
+import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 
 
 const AddProperty = () => {
     return (
         <div>
-            <h2>add property page</h2>
+            <SectionTitle heading='Add A Property' subHeading="What's new !"></SectionTitle>
         </div>
     );
 };
