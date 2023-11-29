@@ -13,6 +13,7 @@ import Dashboard from "../Layout/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
 import PrivateRoute from "./PrivateRoute";
 import Property from "../Pages/Home/Property/Property";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 
 
@@ -48,6 +49,11 @@ import Property from "../Pages/Home/Property/Property";
         {
           path:"cart",
           element:<Cart></Cart>
+        },
+        // agent route
+        {
+          path:"users",
+          element:<AllUsers></AllUsers>
         }
       ]
     }

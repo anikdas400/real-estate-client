@@ -1,11 +1,13 @@
-import { FaBookmark, FaCalendar, FaHome, FaRev, FaShoppingCart } from "react-icons/fa";
+import { FaBookmark, FaCalendar, FaHome, FaList, FaPhone, FaRev, FaShoppingCart, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hook/useCart";
+import useAdmin from "../hook/useAdmin";
 
 
 const Dashboard = () => {
     const [cart] = useCart()
-    // const [isAdmin] = useAdmin()
+    const [isAdmin] = useAdmin()
+    
     return (
         <div className="flex">
             {/* dashboard side bar */}
@@ -15,7 +17,28 @@ const Dashboard = () => {
                     <h3 className="text-lg font-semibold">Real Estate Industries</h3>
                 </div>
                 <ul className="menu">
+                    {
+                        isAdmin ? <>
+                        <li>
+                        <NavLink to='/dashboard/adminHome'><FaHome></FaHome> Admin Home</NavLink>
+                    </li>
                     <li>
+                        <NavLink to='/dashboard/addProperty'><FaShoppingCart></FaShoppingCart>Add Property</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/dashboard/manageItems'><FaList></FaList> Manage items</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/dashboard/Bookings'><FaRev></FaRev>Manage Bookings</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/dashboard/users'><FaUsers></FaUsers> All Users</NavLink>
+                    </li>
+                    
+                        </>
+                        :
+                        <>
+                        <li>
                         <NavLink to='/dashboard/userHome'><FaHome></FaHome> User Home</NavLink>
                     </li>
                     <li>
@@ -30,14 +53,17 @@ const Dashboard = () => {
                     <li>
                         <NavLink to='/dashboard/bookings'><FaBookmark></FaBookmark> My Bookings</NavLink>
                     </li>
+                        </>
+                    }
 
+                    {/* shared navlink */}
                     <div className="divider divider-info">OR</div>
 
                     <li>
                         <NavLink to='/dashboard/userHome'><FaHome></FaHome> User Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/dashboard/userHome'><FaHome></FaHome> User Home</NavLink>
+                        <NavLink to='/dashboard/userHome'><FaPhone></FaPhone> Contact</NavLink>
                     </li>
 
                 </ul>
