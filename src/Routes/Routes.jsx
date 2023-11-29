@@ -61,7 +61,7 @@ import AdminRoute from "./AdminRoute";
         },
         {
           path:"addProperty",
-          element:<AdminRoute><AddProperty></AddProperty></AdminRoute> 
+          element:<AddProperty></AddProperty>
         }
       ]
     }

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hook/useAxiosSecure";
-import { FaTrashAlt, FaUsers, } from "react-icons/fa";
+import { FaTrashAlt, FaUser, FaUsers, } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 
@@ -24,6 +24,22 @@ const AllUsers = () => {
                     position: "top-end",
                     icon: "success",
                     title: `${user.name} is an Admin Now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
+    }
+    const handleMakeAgent = user =>{
+        axiosSecure.patch(`/users/agent/${user._id}`)
+        .then(res =>{
+            console.log(res.data)
+            if(res.data.modifiedCount > 0){
+                refetch();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `${user.name} is an Agent Now!`,
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -70,15 +86,16 @@ const AllUsers = () => {
                 <table className="table table-zebra w-full">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="text-lg">
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Make Admin</th>
+                            <th>Make Agent</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-base">
                         {
                             users.map((user, index) => <tr key={user._id}>
                                 <th>{index + 1}</th>
@@ -87,6 +104,14 @@ const AllUsers = () => {
                                 <td>
                                     { user.role === 'admin' ? 'Admin' : <button
                                         onClick={() => handleMakeAdmin(user)}
+                                        className="btn btn-lg bg-orange-500">
+                                        <FaUser className="text-white 
+                                        text-2xl"></FaUser>
+                                    </button>}
+                                </td>
+                                <td>
+                                    { user.role === 'agent' ? 'Agent' : <button
+                                        onClick={() => handleMakeAgent(user)}
                                         className="btn btn-lg bg-orange-500">
                                         <FaUsers className="text-white 
                                         text-2xl"></FaUsers>

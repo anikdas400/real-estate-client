@@ -55,8 +55,8 @@ const Cart = () => {
                             <th>
                                 #
                             </th>
-                            <th>ITEM IMAGE</th>
-                            <th>ITEM NAME</th>
+                            <th>PROPERTY IMAGE</th>
+                            <th>PROPERTY NAME</th>
                             <th>PRICE</th>
                             <th>ACTION</th>
                         </tr>
