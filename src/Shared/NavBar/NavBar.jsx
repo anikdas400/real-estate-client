@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaHome } from "react-icons/fa";
 import useCart from "../../hook/useCart";
+import useAdmin from "../../hook/useAdmin";
+import useAgent from "../../hook/useAgent";
 
 
 
@@ -10,6 +12,8 @@ import useCart from "../../hook/useCart";
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
   const [cart]= useCart();
+  const [isAdmin] =useAdmin()
+  const [isAgent] =useAgent()
 
     const handleLogOut = () => {
         logOut()
@@ -21,13 +25,25 @@ const NavBar = () => {
     const navOption = <>
         <li><Link to='/' className="text-xl">Home</Link></li>
         <li><Link to='property' className="text-xl">All Properties</Link></li>
-        <li><Link to='/dashbord' className="text-xl">Dashboard</Link></li>
-        <li><Link to='/dashboard/cart' className="text-xl">
+
+        {
+            user && isAdmin && <li><Link to="/dashboard/adminHome"  className="text-xl">Dashboard</Link></li>
+        }
+        {
+            user && isAgent && <li><Link to="/dashboard/agentHome"  className="text-xl">Dashboard</Link></li>
+        }
+        {
+            user && !isAdmin && <li><Link to="/dashboard/userHome"  className="text-xl">Dashboard</Link></li>
+        }
+
+        {user ?
+            <li><Link to='/dashboard/cart' className="text-xl">
            
                 Wishlist <FaHome></FaHome>
                 <div className="badge badge-secondary">+{cart.length}</div>
             
-        </Link></li>
+        </Link></li> :''
+        }
     </>
     return (
         <div className="navbar fixed bg-opacity-40 max-w-screen-xl z-20 bg-base-100">

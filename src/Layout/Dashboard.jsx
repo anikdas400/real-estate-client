@@ -34,9 +34,7 @@ const Dashboard = () => {
                     <li>
                         <NavLink to='/dashboard/manageProperty'><BsFillBuildingsFill /> Manage Properties</NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/dashboard/Bookings'><FaRev></FaRev>Manage Bookings</NavLink>
-                    </li>
+                    
                     <li>
                         <NavLink to='/dashboard/users'><FaUsers></FaUsers> Manage Users</NavLink>
                     </li>
@@ -86,9 +84,7 @@ const Dashboard = () => {
                     <li>
                         <NavLink to='/dashboard/review'><FaRev></FaRev>Add a Review</NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/dashboard/bookings'><FaBookmark></FaBookmark> My Bookings</NavLink>
-                    </li>
+                    
                         </>
 
                     }

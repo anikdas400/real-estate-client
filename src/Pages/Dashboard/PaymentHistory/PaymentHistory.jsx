@@ -21,14 +21,14 @@ const PaymentHistory = () => {
                 <table className="table table-zebra">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="text-lg text-lime-300">
                             <th>#</th>
                             <th>price</th>
                             <th>Transaction Id</th>
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-lg font-semibold">
                         {payments.map((payment, index) => <tr key={payment._id}>
                             <th>{index + 1}</th>
                             <td>${payment.price}</td>
