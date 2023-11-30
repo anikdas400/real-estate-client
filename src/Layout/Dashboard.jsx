@@ -1,5 +1,6 @@
-import { FaBookmark,FaBuilding, FaCalendar, FaHome, FaList, FaPhone, FaRev, FaShoppingCart, FaUsers } from "react-icons/fa";
+import { FaBookmark,FaBuilding, FaCalendar, FaHome, FaPhone, FaRev, FaShoppingCart, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import { FaCircleDollarToSlot } from "react-icons/fa6";
 import { BsFillBuildingsFill } from "react-icons/bs";
 // import {  } from "react-icons/fa";
 import useCart from "../hook/useCart";
@@ -50,19 +51,17 @@ const Dashboard = () => {
                         <NavLink to='/dashboard/cart'><FaShoppingCart></FaShoppingCart>My Wishlist ({cart.length})</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/dashboard/reservation'><FaCalendar></FaCalendar> Reservation</NavLink>
+                        <NavLink to='/dashboard/paymentHistory'><FaCircleDollarToSlot /> My Payment History</NavLink>
                     </li>
                     <li>
                         <NavLink to='/dashboard/review'><FaRev></FaRev>Add a Review</NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/dashboard/bookings'><FaBookmark></FaBookmark> My Bookings</NavLink>
-                    </li>
+                    
                         </> &&
                         isAgent ?<>
                         {/* Agent dashboard */}
                         <li>
-                        <NavLink to='/dashboard/AgentHome'><FaHome></FaHome> Agent Home</NavLink>
+                        <NavLink to='/dashboard/agentHome'><FaHome></FaHome> Agent Home</NavLink>
                     </li>
                     <li>
                         <NavLink to='/dashboard/addProperty'><FaBuilding />Add Property</NavLink>
@@ -82,7 +81,7 @@ const Dashboard = () => {
                         <NavLink to='/dashboard/cart'><FaShoppingCart></FaShoppingCart>My Wishlist ({cart.length})</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/dashboard/reservation'><FaCalendar></FaCalendar> Reservation</NavLink>
+                        <NavLink to='/dashboard/paymentHistory'><FaCircleDollarToSlot /> My Payment History</NavLink>
                     </li>
                     <li>
                         <NavLink to='/dashboard/review'><FaRev></FaRev>Add a Review</NavLink>
@@ -98,7 +97,7 @@ const Dashboard = () => {
                     <div className="divider divider-info">OR</div>
 
                     <li>
-                        <NavLink to='/dashboard/userHome'><FaHome></FaHome> Home</NavLink>
+                        <NavLink to='/'><FaHome></FaHome> Home</NavLink>
                     </li>
                     <li>
                         <NavLink to='/dashboard/userHome'><FaPhone></FaPhone> Contact</NavLink>

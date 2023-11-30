@@ -17,6 +17,12 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AddProperty from "../Pages/Dashboard/AddProperty/AddProperty";
 import AdminRoute from "./AdminRoute";
 import ManageProperty from "../Pages/Dashboard/ManageProperty/ManageProperty";
+import UpdateProperty from "../Pages/Dashboard/UpdateProperty/UpdateProperty";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import AgentHome from "../Pages/Dashboard/AgentHome/AgentHome";
 
 
 
@@ -55,7 +61,29 @@ import ManageProperty from "../Pages/Dashboard/ManageProperty/ManageProperty";
           path:"cart",
           element:<Cart></Cart>
         },
+        {
+          path:"userHome",
+          element:<UserHome></UserHome>
+        },
+      
+        {
+
+          path:"payment",
+          element:<Payment></Payment>
+        },
+        {
+          path:"paymentHistory",
+          element:<PaymentHistory></PaymentHistory>
+        },
         // admin & agent route
+        {
+          path:"adminHome",
+          element:<AdminHome></AdminHome>
+        },
+        {
+          path:"agentHome",
+          element:<AgentHome></AgentHome>
+        },
         {
           path:"users",
           element:<AdminRoute><AllUsers></AllUsers></AdminRoute> 
@@ -63,6 +91,11 @@ import ManageProperty from "../Pages/Dashboard/ManageProperty/ManageProperty";
         {
           path:"addProperty",
           element:<AddProperty></AddProperty>
+        },
+        {
+          path:"updateProperty/:id",
+          element:<UpdateProperty></UpdateProperty>,
+          loader:({params}) => fetch(`http://localhost:5000/properties/${params.id}`)
         },
         {
           path:"manageProperty",

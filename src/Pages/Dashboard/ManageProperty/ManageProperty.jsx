@@ -68,7 +68,7 @@ const ManageProperty = () => {
                                     <td>
                                         <div className="flex items-center gap-3">
                                             <div className="avatar">
-                                                <div className="mask mask-squircle w-12 h-12">
+                                                <div className="mask rounded-lg w-12 h-12">
                                                     <img src={item.image} alt="Avatar Tailwind CSS Component" />
                                                 </div>
                                             </div>
@@ -86,9 +86,9 @@ const ManageProperty = () => {
                                     </td>
                                     <td className="">${item.price}</td>
                                     <td>
-                                        <Link to={`/dashboard/updateItem/${item._id}`}>
+                                        <Link to={`/dashboard/updateProperty/${item._id}`}>
                                             <button
-                                                className="btn btn-ghost btn-lg bg-lime-600">
+                                                className="btn btn-ghost btn-md bg-lime-600">
                                                 <FaEdit className="text-white 
                                         "></FaEdit>
                                             </button>
