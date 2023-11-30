@@ -16,6 +16,7 @@ import Property from "../Pages/Home/Property/Property";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AddProperty from "../Pages/Dashboard/AddProperty/AddProperty";
 import AdminRoute from "./AdminRoute";
+import ManageProperty from "../Pages/Dashboard/ManageProperty/ManageProperty";
 
 
 
@@ -54,7 +55,7 @@ import AdminRoute from "./AdminRoute";
           path:"cart",
           element:<Cart></Cart>
         },
-        // admin route
+        // admin & agent route
         {
           path:"users",
           element:<AdminRoute><AllUsers></AllUsers></AdminRoute> 
@@ -62,6 +63,10 @@ import AdminRoute from "./AdminRoute";
         {
           path:"addProperty",
           element:<AddProperty></AddProperty>
+        },
+        {
+          path:"manageProperty",
+          element:<ManageProperty></ManageProperty>
         }
       ]
     }

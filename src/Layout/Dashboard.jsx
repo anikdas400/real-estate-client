@@ -1,5 +1,6 @@
 import { FaBookmark,FaBuilding, FaCalendar, FaHome, FaList, FaPhone, FaRev, FaShoppingCart, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import { BsFillBuildingsFill } from "react-icons/bs";
 // import {  } from "react-icons/fa";
 import useCart from "../hook/useCart";
 import useAdmin from "../hook/useAdmin";
@@ -30,7 +31,7 @@ const Dashboard = () => {
                         <NavLink to='/dashboard/addProperty'><FaBuilding /> Add Property</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/dashboard/manageItems'><FaList></FaList> Manage items</NavLink>
+                        <NavLink to='/dashboard/manageProperty'><BsFillBuildingsFill /> Manage Properties</NavLink>
                     </li>
                     <li>
                         <NavLink to='/dashboard/Bookings'><FaRev></FaRev>Manage Bookings</NavLink>
@@ -67,7 +68,7 @@ const Dashboard = () => {
                         <NavLink to='/dashboard/addProperty'><FaBuilding />Add Property</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/dashboard/manageItems'><FaList></FaList> Manage items</NavLink>
+                        <NavLink to='/dashboard/manageProperty'><BsFillBuildingsFill /> My Added Properties</NavLink>
                     </li>
                     <li>
                         <NavLink to='/dashboard/Bookings'><FaRev></FaRev>Manage Bookings</NavLink>
