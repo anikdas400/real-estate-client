@@ -33,7 +33,7 @@ const NavBar = () => {
             user && isAgent && <li><Link to="/dashboard/agentHome"  className="text-xl">Dashboard</Link></li>
         }
         {
-            user && !isAdmin && <li><Link to="/dashboard/userHome"  className="text-xl">Dashboard</Link></li>
+            user && !isAdmin && !isAgent && <li><Link to="/dashboard/userHome"  className="text-xl">Dashboard</Link></li>
         }
 
         {user ?

@@ -3,7 +3,7 @@
 const AgentHome = () => {
     return (
         <div>
-            <h2>agent home</h2>
+            <h2>This is Agent Home</h2>
         </div>
     );
 };

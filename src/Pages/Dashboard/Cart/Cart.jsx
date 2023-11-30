@@ -61,7 +61,7 @@ const Cart = () => {
                                 #
                             </th>
                             <th>PROPERTY IMAGE</th>
-                            <th>PROPERTY NAME</th>
+                            <th>AGENT NAME</th>
                             <th>PRICE</th>
                             <th>ACTION</th>
                         </tr>

@@ -68,7 +68,7 @@ const Dashboard = () => {
                         <NavLink to='/dashboard/manageProperty'><BsFillBuildingsFill /> My Added Properties</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/dashboard/Bookings'><FaRev></FaRev>Manage Bookings</NavLink>
+                        <NavLink to='/dashboard/Bookings'><FaRev></FaRev>reviews</NavLink>
                     </li>
                     
                         </>:<>
@@ -96,7 +96,7 @@ const Dashboard = () => {
                         <NavLink to='/'><FaHome></FaHome> Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/dashboard/userHome'><FaPhone></FaPhone> Contact</NavLink>
+                        <NavLink to='/dashboard/l'><FaPhone></FaPhone> Contact</NavLink>
                     </li>
 
                 </ul>
@@ -104,7 +104,7 @@ const Dashboard = () => {
             </div>
 
             {/* dashboard content */}
-            <div className="flex-1 p-8 bg-slate-400">
+            <div className="flex-1 p-8 bg-orange-100">
 
                 <Outlet></Outlet>
 

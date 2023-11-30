@@ -1,9 +1,11 @@
 
 
+
 const UserHome = () => {
+    
     return (
         <div>
-            <h2>user home</h2>
+            <h2>This is User Home</h2>
         </div>
     );
 };
