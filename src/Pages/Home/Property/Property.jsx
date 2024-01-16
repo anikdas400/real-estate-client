@@ -28,10 +28,10 @@ const Property = () => {
             ></SectionTitle>
             <Tabs className={'text-center mt-10 mb-10'} defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList className={'flex gap-5 justify-center mb-10'}>
-                    <Tab className={'text-xl font-semibold hover:text-orange-500 hover:underline cursor-pointer'}>HOUSES</Tab>
-                    <Tab className={'text-xl font-semibold hover:text-orange-500 hover:underline cursor-pointer'}>OFFICE</Tab>
-                    <Tab className={'text-xl font-semibold hover:text-orange-500 hover:underline cursor-pointer'}>VILLA</Tab>
-                    <Tab className={'text-xl font-semibold hover:text-orange-500 hover:underline cursor-pointer'}>BUNGALOW</Tab>
+                    <Tab className={'text-xl font-bold hover:text-orange-500 hover:underline cursor-pointer'}>HOUSES</Tab>
+                    <Tab className={'text-xl font-bold hover:text-orange-500 hover:underline cursor-pointer'}>OFFICE</Tab>
+                    <Tab className={'text-xl font-bold hover:text-orange-500 hover:underline cursor-pointer'}>VILLA</Tab>
+                    <Tab className={'text-xl font-bold hover:text-orange-500 hover:underline cursor-pointer'}>BUNGALOW</Tab>
 
                 </TabList>
                 <TabPanel>

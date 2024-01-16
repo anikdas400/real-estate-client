@@ -67,8 +67,8 @@ const PropertyCard = ({ item }) => {
 
     }
     return (
-        <div>
-            <div className="card card-compact  bg-base-100 shadow-xl">
+        <div className="">
+            <div className="card card-compact  bg-base-100 shadow-xl h-[550px]">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h3 className="card-title">Title: {category}</h3>
@@ -88,7 +88,11 @@ const PropertyCard = ({ item }) => {
 
 
                     </div>
+                    
                     <button onClick={() => handleAddToWishlist()} className="btn btn-success text-lg border-0 border-b-4">Add to Wishlist</button>
+
+                    
+                    
 
                 </div>
             </div>

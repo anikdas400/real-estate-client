@@ -8,7 +8,7 @@ const useProperties = () => {
     // const [properties,setProperties]=useState([])
     // const [loading,setLoading] = useState(true)
     // useEffect(() => {
-    //     fetch('http://localhost:5000/properties')
+    //     fetch('https://real-estate-server-five.vercel.app/properties')
     //     .then(res => res.json())
     //     .then(data=>{             
     //         setProperties(data)

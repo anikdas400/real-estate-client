@@ -35,7 +35,7 @@ const AddProperty = () => {
              console.log(menuRes.data)
              if(menuRes.data.insertedId){
                  // show success popup
-                //  reset();
+                 reset();
                  Swal.fire({
                      position: "top-end",
                      icon: "success",

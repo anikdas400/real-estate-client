@@ -95,7 +95,7 @@ import AgentHome from "../Pages/Dashboard/AgentHome/AgentHome";
         {
           path:"updateProperty/:id",
           element:<UpdateProperty></UpdateProperty>,
-          loader:({params}) => fetch(`http://localhost:5000/properties/${params.id}`)
+          loader:({params}) => fetch(`https://real-estate-server-five.vercel.app/properties/${params.id}`)
         },
         {
           path:"manageProperty",
