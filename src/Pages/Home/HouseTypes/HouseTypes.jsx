@@ -6,8 +6,8 @@ const HouseTypes = ({ item }) => {
     return (
         <div>
 
-            <div className="card card-compact  bg-base-100 shadow-xl">
-                <figure><img src={image} alt="Shoes" /></figure>
+            <div className="card card-compact cursor-pointer group  bg-base-100 shadow-xl h-[550px]">
+                <figure className=" overflow-hidden hover:rounded-tr-3xl hover:rounded-bl-3xl"><img className=" h-full w-full object-cover rounded-tl-3xl rounded-br-3xl group-hover:scale-105 transition" src={image} alt="Shoes" /></figure>
 
 
                 

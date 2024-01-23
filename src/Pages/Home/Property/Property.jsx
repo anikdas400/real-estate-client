@@ -11,8 +11,9 @@ import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 
 
 const Property = () => {
+    const [ase,setAse]=useState(true)
     const [tabIndex, setTabIndex] = useState(0)
-    const [properties] = useProperties()
+    const [properties] = useProperties(ase)
     const houses = properties.filter(item => item.category === 'houses')
     const office = properties.filter(item => item.category === 'office')
     const villa = properties.filter(item => item.category === 'villa')
@@ -26,6 +27,11 @@ const Property = () => {
             <SectionTitle subHeading={'Get some '}
                 heading={'All Apartment Types'}
             ></SectionTitle>
+            {/* sort */}
+            <div className="text-lg font-semibold">Sort by: <button className="btn btn-outline btn-accent text-base" onClick={()=>setAse(!ase)}>
+                
+                {ase ? 'Price:High to Low' : 'Price:Low to High'}
+                </button></div>
             <Tabs className={'text-center mt-10 mb-10'} defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList className={'flex gap-5 justify-center mb-10'}>
                     <Tab className={'text-xl font-bold hover:text-orange-500 hover:underline cursor-pointer'}>HOUSES</Tab>
